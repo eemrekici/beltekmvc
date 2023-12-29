@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Ogretmen>
+@{
+    ViewData["Title"] = "ListTeacher";
+}
+
+<h1>ListTeacher</h1>
+<table>
+    <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Alan</th>
+            </tr>
+    </thead>
+    <tbody>
+        @foreach (var ogrt in Model)
+        {
+            <tr>
+                <td>@ogrt.Ogretmenid</td>
+                <td>@ogrt.Ad</td>
+                <td>@ogrt.Soyad</td>
+                <td>@ogrt.Alan</td>
+                <td><a href="/Teacher/UpdateTeacher/@ogrt.Ogretmenid" class="btn btn-sm btn-primary">Düzenle</a> <a href="/Teacher/DeleteTeacher/@ogrt.Ogretmenid" class="btn btn-sm btn-danger" onclick="return confirm('Emin misiniz?')">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
